@@ -1,6 +1,6 @@
 name: bon_setup_flutter
 description: "A personal collection of flutter utilities"
-version: 0.2.0
+version: 0.3.0
 repository: https://github.com/Yoeri-z/bon_setup
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bon_setup: 0.2.0
+  bon_setup: 0.3.0
 
   provider: ^6.1.5+1
   go_router: ^17.0.0
