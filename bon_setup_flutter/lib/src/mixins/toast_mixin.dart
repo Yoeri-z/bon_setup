@@ -43,7 +43,7 @@ mixin Toaster on ChangeNotifier {
 
   void showToast(String message, ToastType toastType) {
     if (!isTesting && (_context == null || !_context!.mounted)) {
-      Service.logger.w(
+      Services.logger.w(
         "Tried to show toast in $runtimeType without a valid context",
       );
     }
