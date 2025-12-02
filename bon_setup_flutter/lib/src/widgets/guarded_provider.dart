@@ -1,5 +1,6 @@
 import 'package:bon_setup_flutter/src/prop.dart';
 import 'package:bon_setup_flutter/src/widgets/guard_widget.dart';
+import 'package:bon_setup_flutter/src/widgets/notifier_provider.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +21,7 @@ class GuardedProvider<T extends ChangeNotifier> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
+    return NotifierProvider<T>(
       create: create,
       builder: (context, child) {
         final notif = context.watch<T>();
