@@ -15,7 +15,7 @@ abstract interface class ToastNotifier {
 ///If [NotifierProvider] or [NotifierProvider.value] were used to provide the notifier this should never happen.
 ///
 ///Otherwise you should provide valid context using [registerContext] and [deregisterContext]
-mixin Toaster on ChangeNotifier {
+mixin Toaster on ChangeNotifier implements ToastNotifier {
   BuildContext? _context;
 
   ///The toast message queue built up by this notifier.
@@ -39,7 +39,7 @@ mixin Toaster on ChangeNotifier {
 
   ///Mark this notifier to let it know its in a testing environment.
   @visibleForTesting
-  void markIsTesting();
+  void markIsTesting() => isTesting = true;
 
   void showToast(String message, ToastType toastType) {
     if (!isTesting && (_context == null || !_context!.mounted)) {

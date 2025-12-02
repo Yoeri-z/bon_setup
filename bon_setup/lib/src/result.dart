@@ -112,6 +112,8 @@ final class Failure<T extends Object?> implements Result<T> {
 
   const Failure(this.error, [this.stackTrace]);
 
+  Failure.fromOther(Failure other) : this(other.error, other.stackTrace);
+
   @override
   bool get isFailure => true;
 
@@ -163,4 +165,16 @@ final class Failure<T extends Object?> implements Result<T> {
     required OkHandler<U, T> onOk,
     required FailureHandler<U> onFailure,
   }) => onFailure(error, stackTrace);
+}
+
+extension Merge<T> on List<Result<T>> {
+  Result<List<T>> merge() {
+    final list = <T>[];
+    for (final e in this) {
+      if (e.isOk) list.add(e.require);
+      if (e.isFailure) return Failure.fromOther(e.asFailure);
+    }
+
+    return Ok(list);
+  }
 }

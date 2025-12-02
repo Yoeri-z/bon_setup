@@ -14,6 +14,6 @@ export 'src/toaster.dart';
 
 export 'package:bon_setup/bon_setup.dart';
 
-export 'package:provider/src/change_notifier_provider.dart';
+export 'package:provider/src/provider.dart';
 export 'package:provider/src/proxy_provider.dart';
 export 'package:go_router/go_router.dart';
