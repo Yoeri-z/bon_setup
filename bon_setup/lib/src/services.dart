@@ -71,7 +71,7 @@ extension GuardExtension<T extends Object?> on Future<T> {
     } catch (e, st) {
       Services.logger.log(Level.error, message, error: e, stackTrace: st);
 
-      return Failure(e, stackTrace: st);
+      return Failure(e, st);
     }
   }
 }

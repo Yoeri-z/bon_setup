@@ -97,7 +97,7 @@ final class Ok<T extends Object?> extends Result<T> {
   Result<U> failure<U extends Object?>(
     Object error, {
     StackTrace? stackTrace,
-  }) => Failure(error, stackTrace: stackTrace);
+  }) => Failure(error, stackTrace);
 
   @override
   U fold<U>({
@@ -110,7 +110,7 @@ final class Failure<T extends Object?> implements Result<T> {
   final Object error;
   final StackTrace? stackTrace;
 
-  const Failure(this.error, {this.stackTrace});
+  const Failure(this.error, [this.stackTrace]);
 
   @override
   bool get isFailure => true;
@@ -156,7 +156,7 @@ final class Failure<T extends Object?> implements Result<T> {
   Result<U> failure<U extends Object?>(
     Object error, {
     StackTrace? stackTrace,
-  }) => Failure(error, stackTrace: stackTrace);
+  }) => Failure(error, stackTrace);
 
   @override
   U fold<U>({

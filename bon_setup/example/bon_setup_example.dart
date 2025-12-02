@@ -8,7 +8,7 @@ Result<int> unsafeTask(Random random) {
   if (num < 50) {
     return Ok(num);
   } else {
-    return Failure("Number was too high", stackTrace: StackTrace.current);
+    return Failure("Number was too high", StackTrace.current);
   }
 }
 
